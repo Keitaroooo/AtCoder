@@ -11,31 +11,24 @@ using namespace std;
 
 int main()
 {
-    int X, N;
-    cin >> X >> N;
-    vector<int> p(N);
-    for (int i = 0; i < N; i++){
-        cin >> p[i];
-    }
-    int absmin = 1000;
-
-    for (int i = 0; i <= 50; i++){
-        bool flag1 = false;
-        bool flag2 = false;
-        for (int j = 0; j < N; j++){
-            if (X - i == p[j]){
-                flag1 = true;
-            }
-            if (X + i == p[j]){
-                flag2 = true;
-            }
+    long long N;
+    cin >> N;
+    vector<char> name(100000);
+    int count = 0;
+    while (true)
+    {
+        N--;
+        name[count] = char((N % 26) + 'a');
+        N /= 26;
+        if (N == 0)
+        {
+            break;
         }
-        if (flag1 == false){
-            cout << X - i << endl;
-            return 0;
-        }else if(flag2 == false){
-            cout << X + i << endl;
-            return 0;
-        }
+        count++;
     }
+    for (int i = count; i >= 0; i--){
+        cout << name[i];
+    }
+    cout << endl;
+    return 0;
 }

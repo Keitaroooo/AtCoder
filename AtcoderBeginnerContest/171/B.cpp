@@ -10,14 +10,17 @@ using namespace std;
 
 int main()
 {
-    int X, Y;
-    cin >> X >> Y;
-    if (Y % 2 == 1 || Y > (4 * X) || Y < (2 * X))
-    {
-        cout << "No" << endl;
+    int N, K;
+    cin >> N >> K;
+    vector<int> p(N);
+    for (int i = 0; i < N; i++){
+        cin >> p[i];
     }
-    else{
-        cout << "Yes" << endl;
+    sort(p.begin(), p.end());
+    int total = 0;
+    for(int i = 0; i < K; i++){
+        total += p[i];
     }
+    cout << total << endl;
     return 0;
 }

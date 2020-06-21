@@ -13,26 +13,23 @@ int main()
 {
     int N;
     cin >> N;
-    vector<int> A(N);
+    vector<int> X(100000,0);
+    long long sum = 0;
     for (int i = 0; i < N; i++){
-        cin >> A[i];
+        int A;
+        cin >> A;
+        sum += A;
+        X[A]++;
     }
-    sort(A.begin(), A.end(), greater<>());
-    int count = N;
-    for (int i = 0; i < N - 1; i++){
-        bool flag = false;
-        for (int j = i + 1; j < N; j++){
-            if(A[i] % A[j] == 0){
-                flag = true;
-                break;
-            }
-        }
-        if(flag){
-            count--;
-        }
+    int Q;
+    cin >> Q;
+    for (int i = 0; i < Q; i++){
+        int B, C;
+        cin >> B >> C;
+        sum += -(B * X[B]) + (C * X[B]);
+        X[C] += X[B];
+        X[B] = 0;
+        cout << sum << endl;
     }
-    if(A[N - 1] == A[N - 2]){
-        count--;
-    }
-    cout << count << endl;
+    return 0;
 }
