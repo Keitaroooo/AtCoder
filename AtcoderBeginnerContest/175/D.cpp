@@ -19,8 +19,8 @@ int main() {
     for(int i = 0; i < N; i++) {
         cin >> C[i];
     }
-    vector<vector<int>> score(N, <vector<int>>(0));
-    int i - 0,j = 0;
+    vector<vector<int>> score(N, vector<int>(0));
+    int i = 0,j = 0;
     while(1) {
         while(1) {
             if(j == 0) {
