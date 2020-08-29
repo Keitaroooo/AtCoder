@@ -28,15 +28,14 @@ int main()
     int max = A[0];
     for (int i = 0; i < K; i++)
     {
-        if (A[0] <= max)
+        if(A[0] <= max)
         {
             for (int j = 0; j < A.size();j++)
             {
-                if ()
-                    A[j] /= 2.;
+                A[j] /= 2.;
                 A.push_back(A[j]);
             }
-
+                
         }
         else
         {
