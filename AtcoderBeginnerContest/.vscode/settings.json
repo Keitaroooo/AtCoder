@@ -6,6 +6,7 @@
         "cmath": "cpp",
         "ostream": "cpp",
         "xtree": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "algorithm": "cpp"
     }
 }
