@@ -10,8 +10,19 @@
 using namespace std;
 
 int main() {
-    double sx, sy, gx, gy;
-    cin >> sx >> sy >> gx >> gy;
-    cout << setprecision(15) << (gx - sx) * sy / (sy + gy) + sx << endl;
+    int N, X;
+    cin >> N >> X;
+    string S;
+    cin >> S;
+    for(int i = 0; i < N; ++i) {
+        if(S[i] == 'x') {
+            if(X > 0) {
+                X--;
+            }
+        } else {
+            X++;
+        }
+    }
+    cout << X << endl;
     return 0;
 }
