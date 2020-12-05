@@ -28,6 +28,7 @@ int main() {
                 swap(ansP[j], ansP[j - 1]);
             }
             maxCount = position[i];
+            i = maxCount;
         }
     }
     sort(P.begin(), P.end());
