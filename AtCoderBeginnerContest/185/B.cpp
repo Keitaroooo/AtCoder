@@ -9,19 +9,33 @@
 using namespace std;
 
 int main() {
-    int N, X;
-    cin >> N >> X;
-    string S;
-    cin >> S;
-    for(int i = 0; i < N; ++i) {
-        if(S[i] == 'x') {
-            if(X > 0) {
-                X--;
+    int N, M, T;
+    cin >> N >> M >> T;
+    int leftBattery = N;
+    int A, B, beforeB = 0;
+    for(int i = 0; i < M; ++i) {
+        cin >> A >> B;
+        for(int time = beforeB; time < A; ++time) {
+            leftBattery--;
+            if(leftBattery <= 0) {
+                cout << "No" << endl;
+                return 0;
             }
-        } else {
-            X++;
+        }
+        for(int time = A; time < B; ++time) {
+            if(leftBattery < N) {
+                leftBattery++;
+            }
+        }
+        beforeB = B;
+    }
+    for(int time = beforeB; time < T; ++time) {
+        leftBattery--;
+        if(leftBattery <= 0) {
+            cout << "No" << endl;
+            return 0;
         }
     }
-    cout << X << endl;
+    cout << "Yes" << endl;
     return 0;
 }
